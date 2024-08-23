@@ -1,0 +1,46 @@
+{
+  "name": "moalla",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "server": "cd F:\\back\\back-end-ecommerce-before-login && npm start",
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.6.8",
+    "bootstrap": "^5.3.3",
+    "html2canvas": "^1.4.1",
+    "multiselect-react-dropdown": "^2.0.25",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.10.2",
+    "react-color": "^2.19.3",
+    "react-dom": "^18.2.0",
+    "react-image-gallery": "^1.3.0",
+    "react-multiple-image-input": "^1.0.0",
+    "react-paginate": "^8.2.0",
+    "react-rating-stars-component": "^2.2.0",
+    "react-redux": "^9.1.1",
+    "react-router-dom": "^6.22.3",
+    "react-toastify": "^10.0.5",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^3.1.0",
+    "sweetalert2": "^11.12.4",
+    "unop-react-dropdown": "^0.2.3"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.24.7",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@vitejs/plugin-react": "^4.2.0",
+    "eslint": "^8.53.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.4",
+    "vite": "^5.0.0"
+  }
+}
