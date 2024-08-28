@@ -7,9 +7,10 @@ import add from "../../images/add.png";
 import { CompactPicker } from "react-color";
 
 import { ToastContainer } from "react-toastify";
-import AddProductHook from "../../hook/product/Add_Product_Hook";
 
-const AdminAddProducts = ({ title }) => {
+import updateProductHook from "../../hook/product/Admin_Update_Product_Hook";
+
+const AdminUpdateProduct = () => {
   const [
     removeImage,
     handleTheColorListClicked,
@@ -46,11 +47,14 @@ const AdminAddProducts = ({ title }) => {
     onSelect,
     onRemove,
     handleSubmit,
-  ] = AddProductHook();
+    data,
+    x,
+  ] = updateProductHook();
 
   // const setcolor = (e) => {
   //   document.documentElement.style.setProperty("--color-logo", e);
   // };
+
   return (
     <div>
       {/* <button
@@ -68,7 +72,7 @@ const AdminAddProducts = ({ title }) => {
       //   blue */}
       {/* // </button> */}
       <Row className="justify-content-start ">
-        <div className="admin-content-text pb-4"> {title}</div>
+        <div className="admin-content-text pb-4"> تعديل المنتج </div>
         <Col sm="8">
           {4 - images.length > 0 ? (
             <div className="text-form mt-3 ">
@@ -78,7 +82,7 @@ const AdminAddProducts = ({ title }) => {
 
           <div className="text-form pb-2">
             {images.length >= 4 ? null : (
-              <label for="upload-photo">
+              <label htmlFor="upload-photo">
                 <img
                   src={avatar}
                   alt="nothing"
@@ -99,6 +103,7 @@ const AdminAddProducts = ({ title }) => {
             images.map((e) => {
               return (
                 <img
+                  key={e}
                   onClick={() => removeImage(e)}
                   src={e}
                   alt="nothing"
@@ -177,14 +182,17 @@ const AdminAddProducts = ({ title }) => {
             id="lang"
             className="select input-form-area mt-3 px-2 "
           >
-            <option value="0">التصنيف الرئيسي</option>
-            {category.data &&
+            {!!data ? <option value={data.category}>{x} </option> : null}
+
+            {!!category?.data &&
               category.data.map((e, index) => {
-                return (
-                  <option key={index} value={e._id}>
-                    {e.name}
-                  </option>
-                );
+                if (e.name != x) {
+                  return (
+                    <option key={index} value={e._id}>
+                      {e.name}
+                    </option>
+                  );
+                }
               })}
           </select>
           {click && CatId === "" && (
@@ -236,10 +244,11 @@ const AdminAddProducts = ({ title }) => {
             />
 
             {colors.length >= 1
-              ? colors.map((e) => {
+              ? colors.map((e, idx) => {
                   return (
                     <div
                       onClick={() => removecolor(e)}
+                      key={idx}
                       className="color ms-2 border mt-1"
                       style={{ backgroundColor: e }}
                     ></div>
@@ -281,4 +290,4 @@ const AdminAddProducts = ({ title }) => {
   );
 };
 
-export default AdminAddProducts;
+export default AdminUpdateProduct;

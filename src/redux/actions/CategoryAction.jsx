@@ -1,4 +1,9 @@
-import { CREATE_CATEGORY, GET_ALL_CATEGORY, GET_ERROR } from "../type";
+import {
+  CREATE_CATEGORY,
+  GET_ALL_CATEGORY,
+  GET_ERROR,
+  GET_SPECIFIC_CATEGORY,
+} from "../type";
 import UseGetData from "../../hooks/UseGetData";
 import { useinsertDataWithImage } from "../../hooks/UseinsertData";
 
@@ -33,6 +38,19 @@ export const createCategory = (formData) => async (dispatch) => {
       formData
     );
     dispatch({ type: CREATE_CATEGORY, payload: response.data, loading: true });
+  } catch (e) {
+    dispatch({ type: GET_ERROR, payload: "Error" + e });
+  }
+};
+
+export const getSpecifiCategory = (id) => async (dispatch) => {
+  try {
+    const response = await UseGetData(`api/v1/categories/${id}`);
+    dispatch({
+      type: GET_SPECIFIC_CATEGORY,
+      payload: response.data,
+      loading: true,
+    });
   } catch (e) {
     dispatch({ type: GET_ERROR, payload: "Error" + e });
   }

@@ -7,10 +7,11 @@ const AdminAllProducts = ({ products }) => {
     <div>
       <div className="admin-content-text">ادارة جميع المنتجات</div>
       <Row className="justify-content-start">
-        {products &&
-          products.map((e) => {
-            return <AdminAllProductsCard product={e} />;
-          })}
+        {!!products
+          ? products.map((e, idx) => {
+              return <AdminAllProductsCard key={idx} product={e} />;
+            })
+          : null}
       </Row>
     </div>
   );

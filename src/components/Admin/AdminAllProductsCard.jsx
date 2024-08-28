@@ -28,11 +28,11 @@ const AdminAllProductsCard = ({ product }) => {
       }
     });
   };
-  console.log(product._id, "yyyyyyyyyyyyyyyyyy");
+
   const dispatch = useDispatch();
   const handleDelete = () => {
     dispatch(DeleteProduct(product._id));
-    dispatch(getAllProduct());
+    //dispatch(getAllProduct());
   };
 
   return (
@@ -57,7 +57,9 @@ const AdminAllProductsCard = ({ product }) => {
             >
               ازاله
             </div>
-            <div className="d-inline item-delete-edit">تعديل</div>
+            <Link to={`/admin/products/${product._id}`}>
+              <div className="d-inline item-delete-edit">تعديل</div>
+            </Link>
           </Col>
         </Row>
         <Link to="/products/:id" style={{ textDecoration: "none" }}>

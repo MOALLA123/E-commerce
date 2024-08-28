@@ -8,6 +8,7 @@ import { createProduct } from "./../../redux/actions/ProductsAction";
 import notify from "../../hook/UseNotification";
 const AddProductHook = () => {
   const [imageaForSend, setImageForSend] = useState([]);
+  const [catname, setcatname] = useState();
   const [images, setImages] = useState([]);
   //to store all pick color
   const [colors, setColors] = useState([]);
@@ -64,11 +65,11 @@ const AddProductHook = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const color = getComputedStyle(document.documentElement).getPropertyValue(
-      "--color-logo"
-    );
+    // const color = getComputedStyle(document.documentElement).getPropertyValue(
+    //   "--color-logo"
+    // );
 
-    console.log(color, "xxxxxxxxxxxxxxxxxxxxxxxx");
+    // console.log(color, "xxxxxxxxxxxxxxxxxxxxxxxx");
 
     dispatch(getAllCategory());
 

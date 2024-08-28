@@ -1,26 +1,26 @@
 import React from "react";
-import AdminAddProducts from "../../components/Admin/AdminAddProducts";
-import { Col, Container, Row } from "react-bootstrap";
 import AdminSideBar from "../../components/Admin/AdminSideBar";
+import { Row, Col, Container } from "react-bootstrap";
+import AdminUpdateProduct from "../../components/Admin/AdminUpdateProduct";
 import Transitions from "../../transation";
-const AdminAddProductPage = () => {
+
+const AdminUpdateProductpage = () => {
   return (
-    <div>
-      {" "}
-      <>
+    <>
+      <div>
         <Container>
           <Row className="py-3">
             <Col sm="3" xs="2" md="2">
               <AdminSideBar />
             </Col>
             <Col sm="9" xs="10" md="10">
-              <AdminAddProducts title={"اضافة منتج"} />
+              <AdminUpdateProduct />
             </Col>
           </Row>
         </Container>
-      </>
-    </div>
+      </div>{" "}
+    </>
   );
 };
 
-export default AdminAddProductPage;
+export default AdminUpdateProductpage;

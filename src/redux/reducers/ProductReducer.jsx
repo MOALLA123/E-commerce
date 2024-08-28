@@ -4,6 +4,7 @@ import {
   GET_ALL_PRODUCTS,
   GET_ERROR,
   GET_PRODUCT_DETAILS,
+  UPDATE_PRODUCT,
 } from "../type";
 
 const initial = {
@@ -45,6 +46,12 @@ const productReducer = (state = initial, action) => {
     case GET_PRODUCT_DETAILS:
       return {
         productDetails: action.payload,
+        loading: false,
+      };
+    case UPDATE_PRODUCT:
+      return {
+        ...state,
+        allproduct: action.payload,
         loading: false,
       };
 

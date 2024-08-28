@@ -1,12 +1,14 @@
 import UseDeleteData from "../../hooks/UseDeleteData";
 import UseGetData from "../../hooks/UseGetData";
 import { useinsertDataWithImage } from "../../hooks/UseinsertData";
+import { useUpdateDataWithImage } from "../../hooks/useUpdateData";
 import {
   CREATE_PRODUCT,
   DELETE_PRODUCTS,
   GET_ALL_PRODUCTS,
   GET_ERROR,
   GET_PRODUCT_DETAILS,
+  UPDATE_PRODUCT,
 } from "../type";
 
 export const createProduct = (data) => async (dispatch) => {
@@ -44,6 +46,18 @@ export const GetProductDetails = (id) => async (dispatch) => {
   console.log(response, "tttttttttttttt");
   try {
     dispatch({ type: GET_PRODUCT_DETAILS, payload: response.data });
+  } catch (e) {
+    dispatch({ type: GET_ERROR, payload: "Error" + e });
+  }
+};
+
+export const updateProduct = (data, id) => async (dispatch) => {
+  try {
+    const response = await useUpdateDataWithImage(
+      `api/v1/products/${id}`,
+      data
+    );
+    dispatch({ type: UPDATE_PRODUCT, payload: response });
   } catch (e) {
     dispatch({ type: GET_ERROR, payload: "Error" + e });
   }

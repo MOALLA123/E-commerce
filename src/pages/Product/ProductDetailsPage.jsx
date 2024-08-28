@@ -7,6 +7,7 @@ import CardProductContainer from "./../../components/Products/CardProductContain
 import { useDispatch, useSelector } from "react-redux";
 import { GetProductDetails } from "../../redux/actions/ProductsAction";
 import { useParams } from "react-router-dom";
+import Transitions from "../../transation";
 
 const ProductDetailsPage = () => {
   const { id } = useParams();
@@ -14,22 +15,24 @@ const ProductDetailsPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // const id = "66c5f0abbeb2ab968a54a40c";
     dispatch(GetProductDetails(id));
-  }, []);
+  }, [id]);
 
-  const res = useSelector((state) => state.allproducts.productDetails.data);
-  console.log(res, "opopoop");
-  return (
-    <div style={{ minHeight: "670px" }}>
-      <CategoryHeader />
-      <Container>
-        <ProductDetails productdetails={{ res }} />
-        <RateContainer />
-        <CardProductContainer title="منتجات قد تعجبك" />
-      </Container>
-    </div>
-  );
+  const res = useSelector((state) => state.allproducts.productDetails);
+  if (res) {
+    return (
+      <>
+        <div style={{ minHeight: "670px" }}>
+          <CategoryHeader />
+          <Container>
+            <ProductDetails productdetails={res.data} />
+            <RateContainer />
+            <CardProductContainer title="منتجات قد تعجبك" />
+          </Container>
+        </div>{" "}
+      </>
+    );
+  }
 };
 
 export default ProductDetailsPage;
