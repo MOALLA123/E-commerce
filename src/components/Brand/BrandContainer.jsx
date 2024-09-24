@@ -9,8 +9,8 @@ const BrandContainer = ({ brand, loading }) => {
       <div className="admin-content-text mt-2 ">كل الماركات</div>
       <Row className="my-2 d-flex justify-content-between">
         {brand.data
-          ? brand.data.map((item) => {
-              return <BrandCard img={item.image} name={item.name} />;
+          ? brand.data.map((item, i) => {
+              return <BrandCard img={item.image} name={item.name} key={i} />;
             })
           : null}
       </Row>

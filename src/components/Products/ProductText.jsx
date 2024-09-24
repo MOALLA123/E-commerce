@@ -14,7 +14,6 @@ const ProductText = ({ details }) => {
   const category = useSelector(
     (state) => state.allCategory.specificCategory.data
   );
-  category ? console.log(category, "uuuuuuuuu") : null;
   return (
     <div>
       <Row className="mt-2">
@@ -39,9 +38,10 @@ const ProductText = ({ details }) => {
       <Row>
         <Col md="8" className="mt-1 d-flex">
           <div className="cat-text">الألوان المتاحة : </div>
-          {details.availableColors.map((e) => {
+          {details.availableColors.map((e, idx) => {
             return (
               <div
+                key={idx}
                 className="color ms-2 border"
                 style={{ backgroundColor: e }}
               ></div>

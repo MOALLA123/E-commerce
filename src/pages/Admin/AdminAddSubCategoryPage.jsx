@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import AdminSideBar from "../../components/Admin/AdminSideBar";
 import AdminAddSubCategory from "../../components/Admin/AdminSubCategory";
-import Transitions from "../../transation";
+import Transitions from "../Animation/transation";
 const AdminAddSubCategoryPage = () => {
   return (
     <>

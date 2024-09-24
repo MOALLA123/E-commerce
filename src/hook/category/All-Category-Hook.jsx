@@ -24,7 +24,6 @@ const AllCategoryHook = () => {
 
   const getPage = (page) => {
     dispatch(getAllCategoryPage(page));
-    console.log(page);
   };
 
   return [category, loading, pageCount, getPage];

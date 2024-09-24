@@ -5,7 +5,7 @@ import {
   GET_SPECIFIC_BRAND,
 } from "../type";
 import UseGetData from "../../hooks/UseGetData";
-import { useinsertDataWithImage } from "../../hooks/UseinsertData";
+import { useInsertDataWithImage } from "../../hooks/UseinsertData";
 
 export const getAllBrand = (limit) => async (dispatch) => {
   try {
@@ -33,7 +33,7 @@ export const getAllBrandPage = (page) => async (dispatch) => {
 
 export const createBrand = (formData) => async (dispatch) => {
   try {
-    const response = await useinsertDataWithImage("api/v1/brands", formData);
+    const response = await useInsertDataWithImage("api/v1/brands", formData);
     dispatch({ type: CREATE_BRAND, payload: response.data, loading: true });
   } catch (e) {
     dispatch({ type: GET_ERROR, payload: "Error" + e });
@@ -43,7 +43,7 @@ export const createBrand = (formData) => async (dispatch) => {
 export const getSpecificBrand = (id) => async (dispatch) => {
   try {
     const response = await UseGetData(`api/v1/brands/${id}`);
-    console.log(response, "actionnnnnnnnnnnn");
+
     dispatch({
       type: GET_SPECIFIC_BRAND,
       payload: response.data,

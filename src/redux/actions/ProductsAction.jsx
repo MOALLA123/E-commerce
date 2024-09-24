@@ -1,6 +1,6 @@
-import UseDeleteData from "../../hooks/UseDeleteData";
+import useDeleteData from "../../hooks/UseDeleteData";
 import UseGetData from "../../hooks/UseGetData";
-import { useinsertDataWithImage } from "../../hooks/UseinsertData";
+import { useInsertDataWithImage } from "../../hooks/UseinsertData";
 import { useUpdateDataWithImage } from "../../hooks/useUpdateData";
 import {
   CREATE_PRODUCT,
@@ -13,7 +13,7 @@ import {
 
 export const createProduct = (data) => async (dispatch) => {
   try {
-    const response = await useinsertDataWithImage("api/v1/products", data);
+    const response = await useInsertDataWithImage("api/v1/products", data);
     dispatch({ type: CREATE_PRODUCT, payload: response });
   } catch (e) {
     dispatch({ type: GET_ERROR, payload: "Error" + e });
@@ -33,9 +33,9 @@ export const getAllProduct = () => async (dispatch) => {
 };
 
 export const DeleteProduct = (id) => async (dispatch) => {
-  await UseDeleteData(`api/v1/products/${id}`);
+  const response = await useDeleteData(`api/v1/products/${id}`);
   try {
-    dispatch({ type: DELETE_PRODUCTS });
+    dispatch({ payload: response.data, type: DELETE_PRODUCTS });
   } catch (e) {
     dispatch({ type: GET_ERROR, payload: "Error" + e });
   }
@@ -43,7 +43,7 @@ export const DeleteProduct = (id) => async (dispatch) => {
 
 export const GetProductDetails = (id) => async (dispatch) => {
   const response = await UseGetData(`api/v1/products/${id}`);
-  console.log(response, "tttttttttttttt");
+
   try {
     dispatch({ type: GET_PRODUCT_DETAILS, payload: response.data });
   } catch (e) {

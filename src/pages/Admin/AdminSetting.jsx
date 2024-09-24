@@ -1,34 +1,17 @@
 import React from "react";
-import { Button, Card } from "react-bootstrap";
-import Home from "../HomePage";
-import photo from "../../images/brand1.png";
-import { CompactPicker } from "react-color";
-import Transitions from "../../transation";
+import { Container, Row, Col } from "react-bootstrap";
+import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
+
 const AdminSetting = () => {
+  const { register, handleSubmit } = useForm();
   return (
-    <>
-      <div style={{ display: "flex" }}>
-        <div>
-          <Card style={{ width: "18rem", margin: "auto" }}>
-            <Card.Body>
-              <Card.Title>لون الخلفية الرئسي</Card.Title>
-              <CompactPicker />
-            </Card.Body>
-          </Card>
-        </div>
-        <Card
-          style={{
-            width: "18rem",
-            margin: "auto",
-          }}
-        >
-          <Card.Body>
-            <Card.Title>لون الخلفية الرئسي</Card.Title>
-            <CompactPicker />
-          </Card.Body>
-        </Card>
-      </div>{" "}
-    </>
+    <form onSubmit={handleSubmit((e) => console.log(e.lname))}>
+      <input {...register("firstname")} />
+      <input {...register("lname")} />
+      <button type="submit">ddd</button>
+    </form>
   );
 };
+
 export default AdminSetting;

@@ -1,12 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HomePage from "./pages/HomePage";
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-  useLocation,
-  useParams,
-} from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Footer from "./components/utility/Footer";
 import NavBarLogin from "./components/utility/NavBarLogin";
 import LoginPage from "./pages/Auth/LoginPage";
@@ -33,17 +27,33 @@ import UserProfilePage from "./pages/User/UserProfilePage";
 import AdminSetting from "./pages/Admin/AdminSetting";
 import AdminUpdateProductpage from "./pages/Admin/AdminUpdateProductpage";
 import { AnimatePresence } from "framer-motion";
-import Transitions from "./transation";
+import Transitions from "./pages/Animation/transation";
+import ScrollAnimation from "./pages/Animation/ScrollAnimation";
+
+import ForgetPasswordPage from "./pages/Auth/ForgetPasswordPage";
+import VerifyPasswordPage from "./pages/Auth/VerifyPasswordPage";
+import UserProfile from "./components/User/UserProfile";
+import ResetPasswordPage from "./pages/Auth/ResetPasswordPage";
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
   const location = useLocation();
+
   return (
     <div className="font">
       <NavBarLogin />
+
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route>
-            <Route index element={<HomePage />} />
+            <Route
+              index
+              element={
+                <Transitions>
+                  <HomePage />
+                </Transitions>
+              }
+            />
             <Route
               path="/login"
               element={
@@ -52,53 +62,243 @@ const App = () => {
                 </Transitions>
               }
             />
-            <Route path="/register" element={<RegisterPage />} />
-            <Route path="/allcategory" element={<AllCategoryPage />} />
-            <Route path="/allbrand" element={<AllBrandpage />} />
-            <Route path="/products" element={<ShopProductsPage />} />
-            <Route path="/products/:id" element={<ProductDetailsPage />} />
+            <Route
+              path="/register"
+              element={
+                <Transitions>
+                  <RegisterPage />
+                </Transitions>
+              }
+            />
+            <Route
+              path="/allcategory"
+              element={
+                <Transitions>
+                  <AllCategoryPage />
+                </Transitions>
+              }
+            />
+            <Route
+              path="/allbrand"
+              element={
+                <Transitions>
+                  <AllBrandpage />
+                </Transitions>
+              }
+            />
+            <Route
+              path="/products"
+              element={
+                <Transitions>
+                  <ShopProductsPage />
+                </Transitions>
+              }
+            />
+            <Route
+              path="/products/:id"
+              element={
+                <Transitions>
+                  <ProductDetailsPage />
+                </Transitions>
+              }
+            />
             <Route
               path="/admin/products/:id"
-              element={<AdminUpdateProductpage />}
+              element={
+                <Transitions>
+                  <AdminUpdateProductpage />
+                </Transitions>
+              }
             />
-            <Route path="/cart" element={<CartPage />} />
-            <Route path="/order/paymethoud" element={<ChoosePayMethodPage />} />
+            <Route
+              path="/cart"
+              element={
+                <Transitions>
+                  <CartPage />
+                </Transitions>
+              }
+            />
+            <Route
+              path="/order/paymethoud"
+              element={
+                <Transitions>
+                  <ChoosePayMethodPage />
+                </Transitions>
+              }
+            />
             <Route
               path="/admin/allproducts"
-              element={<AdminAllProductPage />}
+              element={
+                <Transitions>
+                  <AdminAllProductPage />
+                </Transitions>
+              }
             />
-            <Route path="/admin/allorders" element={<AdminAllOrdersPage />} />
+            <Route
+              path="/admin/allorders"
+              element={
+                <Transitions>
+                  <AdminAllOrdersPage />
+                </Transitions>
+              }
+            />
             <Route
               path="/admin/orders/23/"
-              element={<AdminOrderDetailsPage />}
+              element={
+                <Transitions>
+                  <AdminOrderDetailsPage />
+                </Transitions>
+              }
             />
-            <Route path="/admin/addbrand" element={<AdminAddBrandPage />} />
+            <Route
+              path="/admin/addbrand"
+              element={
+                <Transitions>
+                  <AdminAddBrandPage />
+                </Transitions>
+              }
+            />
             <Route
               path="/admin/addcategory"
-              element={<AdminAddCategoryPage />}
+              element={
+                <Transitions>
+                  <AdminAddCategoryPage />
+                </Transitions>
+              }
             />
             <Route
               path="/admin/addsubcategory"
-              element={<AdminAddSubCategoryPage />}
+              element={
+                <Transitions>
+                  <AdminAddSubCategoryPage />
+                </Transitions>
+              }
             />
-            <Route path="/admin/setting" element={<AdminSetting />} />
-            <Route path="/admin/addproduct" element={<AdminAddProductPage />} />
-            <Route path="/user/allorders" element={<UserAllOrdersPage />} />
+            <Route
+              path="/admin/setting"
+              element={
+                <Transitions>
+                  <AdminSetting />
+                </Transitions>
+              }
+            />
+            <Route
+              path="/admin/addproduct"
+              element={
+                <Transitions>
+                  <AdminAddProductPage />
+                </Transitions>
+              }
+            />
+            <Route
+              path="/user/allorders"
+              element={
+                <Transitions>
+                  <UserAllOrdersPage />
+                </Transitions>
+              }
+            />
             <Route
               path="/user/favoriteproducts"
-              element={<UserFavouriteProductsPage />}
+              element={
+                <Transitions>
+                  <UserFavouriteProductsPage />
+                </Transitions>
+              }
             />
-            <Route path="/user/addresses" element={<UserAllAddresPage />} />
-            <Route path="/user/add-address" element={<UserAddAddressPage />} />
+            <Route
+              path="/user/addresses"
+              element={
+                <Transitions>
+                  <UserAllAddresPage />
+                </Transitions>
+              }
+            />
+            <Route
+              path="/user/add-address"
+              element={
+                <Transitions>
+                  <UserAddAddressPage />
+                </Transitions>
+              }
+            />
             <Route
               path="/user/edit-address"
-              element={<UserEditAddressPage />}
+              element={
+                <Transitions>
+                  <UserEditAddressPage />
+                </Transitions>
+              }
             />
-            <Route path="/user/profile" element={<UserProfilePage />} />{" "}
+
+            <Route
+              path="/user/forget-password"
+              element={
+                <Transitions>
+                  <ForgetPasswordPage />
+                </Transitions>
+              }
+            />
+
+            <Route
+              path="/user/profile"
+              element={
+                <Transitions>
+                  <UserProfilePage />
+                </Transitions>
+              }
+            />
+            <Route
+              path="/user/forget-password"
+              element={
+                <Transitions>
+                  <ForgetPasswordPage />
+                </Transitions>
+              }
+            />
+
+            <Route
+              path="/user/forget-password"
+              element={
+                <Transitions>
+                  <ForgetPasswordPage />
+                </Transitions>
+              }
+            />
+
+            <Route
+              path="/user/reset"
+              element={
+                <Transitions>
+                  <ResetPasswordPage />
+                </Transitions>
+              }
+            />
+
+            <Route
+              path="/user/verify-code"
+              element={
+                <Transitions>
+                  <VerifyPasswordPage />
+                </Transitions>
+              }
+            />
           </Route>
         </Routes>
       </AnimatePresence>
       <Footer />
+
+      <ToastContainer
+        autoClose={1000}
+        position="top-right"
+        hideProgressBar={true}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable={false}
+        pauseOnHover={false}
+        theme="dark"
+      />
     </div>
   );
 };

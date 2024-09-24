@@ -12,12 +12,8 @@ function BrandFeautured({ title, btntitle }) {
         {loading ? (
           <h1>loading.......</h1>
         ) : brand && brand.data.length > 0 ? (
-          brand.data.slice(0, 5).map((item) => {
-            return (
-              <>
-                <BrandCard img={item.image} name={item.name} />
-              </>
-            );
+          brand.data.slice(0, 5).map((item, i) => {
+            return <BrandCard img={item.image} name={item.name} key={i} />;
           })
         ) : (
           <h5>لا يوجد ماركات لعرضها !</h5>

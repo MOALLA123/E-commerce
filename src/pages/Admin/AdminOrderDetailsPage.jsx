@@ -3,7 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import AdminSideBar from "../../components/Admin/AdminSideBar";
 
 import AdminOrderDetails from "../../components/Admin/AdminOrderDetails";
-import Transitions from "../../transation";
+import Transitions from "../Animation/transation";
 
 const AdminOrderDetailsPage = () => {
   return (

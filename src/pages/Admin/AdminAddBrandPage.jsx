@@ -2,7 +2,7 @@ import React from "react";
 import AdminAddBrand from "../../components/Admin/AdminAddBrand";
 import { Col, Container, Row } from "react-bootstrap";
 import AdminSideBar from "../../components/Admin/AdminSideBar";
-import Transitions from "../../transation";
+import Transitions from "../Animation/transation";
 
 const AdminAddBrandPage = () => {
   return (

@@ -9,29 +9,28 @@ import {
 } from "../../redux/actions/ProductsAction";
 
 const AdminAllProductsCard = ({ product }) => {
-  const dialog = () => {
+  const dispatch = useDispatch();
+  const handleDelete = () => {
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      title: "هل انت متأكد?",
+      text: "لا يمكن التراجع!!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonText: "نعم,قم بالحذف",
+      cancelButtonText: "الغاء",
     }).then((result) => {
       if (result.isConfirmed) {
+        dispatch(DeleteProduct(product._id));
         Swal.fire({
-          title: "Deleted!",
-          text: "Your file has been deleted.",
+          title: "تم الحذف",
+
           icon: "success",
         });
       }
     });
-  };
 
-  const dispatch = useDispatch();
-  const handleDelete = () => {
-    dispatch(DeleteProduct(product._id));
     //dispatch(getAllProduct());
   };
 

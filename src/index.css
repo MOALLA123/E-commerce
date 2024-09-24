@@ -25,6 +25,43 @@ html.is-animating .transition-fade {
 .hieght-search {
   height: 80vh;
 }
+
+.imagex {
+  position: relative;
+  opacity: 1;
+  display: block;
+  filter: alpha(opacity=40);
+}
+
+.content {
+  background-color: rgba(255, 255, 255, 0.6);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  top: 0;
+  left: 0;
+  position: absolute;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+}
+
+.content:hover {
+  opacity: 1;
+}
+
+.content h6 {
+  font-weight: bold;
+  border-radius: 30%;
+  padding: 20px;
+  border: rgba(107, 94, 94, 0.2) solid;
+  background-color: rgba(255, 255, 255, 0.945);
+
+  color: rgb(0, 0, 0);
+}
+
 .logo {
   height: 46px;
   width: 50px;
@@ -679,4 +716,23 @@ html.is-animating .transition-fade {
 
   border-radius: 6px;
   background: -webkit-linear-gradient(red, white);
+}
+
+.dropdown-toggle {
+  color: white !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  margin-top: 14px;
+}
+.dropdown-menu {
+  background-color: #212529 !important;
+  color: white !important;
+}
+.dropdown-item {
+  color: white !important;
+  text-align: center !important;
+}
+.dropdown-item:hover {
+  color: #212529 !important;
+  background-color: white !important;
 }

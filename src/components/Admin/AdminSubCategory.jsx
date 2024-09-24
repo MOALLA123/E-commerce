@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
-import { ToastContainer } from "react-toastify";
+
 import AddSubcategoryHook from "../../hook/subcategory/Add_Subcategory_Hook";
 
 const AdminAddSubCategory = () => {
@@ -54,17 +54,6 @@ const AdminAddSubCategory = () => {
           </button>
         </Col>
       </Row>
-      <ToastContainer
-        autoClose={1000}
-        position="top-right"
-        hideProgressBar={true}
-        closeOnClick={false}
-        rtl={false}
-        pauseOnFocusLoss={false}
-        draggable={false}
-        pauseOnHover={false}
-        theme="dark"
-      />
     </div>
   );
 };

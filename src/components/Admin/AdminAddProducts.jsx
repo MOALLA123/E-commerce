@@ -6,7 +6,6 @@ import add from "../../images/add.png";
 
 import { CompactPicker } from "react-color";
 
-import { ToastContainer } from "react-toastify";
 import AddProductHook from "../../hook/product/Add_Product_Hook";
 
 const AdminAddProducts = ({ title }) => {
@@ -266,17 +265,6 @@ const AdminAddProducts = ({ title }) => {
           </button>
         </Col>
       </Row>
-      <ToastContainer
-        autoClose={1000}
-        position="top-right"
-        hideProgressBar={true}
-        closeOnClick={false}
-        rtl={false}
-        pauseOnFocusLoss={false}
-        draggable={false}
-        pauseOnHover={false}
-        theme="dark"
-      />
     </div>
   );
 };

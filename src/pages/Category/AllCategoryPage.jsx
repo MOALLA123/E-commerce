@@ -8,7 +8,7 @@ import {
 } from "../../redux/actions/CategoryAction";
 import Spinner from "react-bootstrap/Spinner";
 import AllCategoryHook from "../../hook/category/All-Category-Hook";
-import Transitions from "../../transation";
+import Transitions from "../Animation/transation";
 
 const AllCategoryPage = () => {
   const [category, loading, pageCount, getPage] = AllCategoryHook();

@@ -5,7 +5,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import SideFilter from "../../components/utility/SideFilter";
 import CardProductContainer from "../../components/Products/CardProductContainer";
 import Pagination from "../../components/utility/Pagination";
-import Transitions from "../../transation";
+import Transitions from "../Animation/transation";
 
 const ShopProductsPage = () => {
   return (
@@ -24,7 +24,7 @@ const ShopProductsPage = () => {
           </Row>
           <Pagination />
         </Container>
-      </div>{" "}
+      </div>
     </>
   );
 };

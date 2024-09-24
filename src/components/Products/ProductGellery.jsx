@@ -7,7 +7,7 @@ import LeftButton from "./LeftButton";
 const ProductGellery = ({ gallery }) => {
   const images = [];
   //to store images in the images arrray as a object
-  gallery && gallery.map((e) => images.push({ original: e }));
+  gallery?.map((e) => images.push({ original: e }));
 
   return (
     <div

@@ -2,7 +2,7 @@ import React from "react";
 import AdminAddProducts from "../../components/Admin/AdminAddProducts";
 import { Col, Container, Row } from "react-bootstrap";
 import AdminSideBar from "../../components/Admin/AdminSideBar";
-import Transitions from "../../transation";
+import Transitions from "../Animation/transation";
 const AdminAddProductPage = () => {
   return (
     <div>

@@ -5,7 +5,7 @@ import AdminAllProducts from "../../components/Admin/AdminAllProducts";
 import Pagination from "./../../components/utility/Pagination";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProduct } from "../../redux/actions/ProductsAction";
-import Transitions from "../../transation";
+import Transitions from "../Animation/transation";
 const AdminAllProductPage = () => {
   const dispatch = useDispatch();
   useEffect(() => {

@@ -12,6 +12,7 @@ const initial = {
   product: [],
   //when get product
   allproduct: [],
+  deleted: [],
   productDetails: [],
   loading: true,
 };
@@ -34,6 +35,7 @@ const productReducer = (state = initial, action) => {
     case DELETE_PRODUCTS:
       return {
         ...state,
+        deleted: action.payload,
         loading: false,
       };
 

@@ -114,9 +114,6 @@ const updateProductHook = () => {
         }
       }
 
-      console.log(x, "xxxxxxxxxxxxxxxxxx");
-      console.log(imageaForSend, "blobbbbbbbbbb");
-
       setProdName(data.title);
       setImages(data.images);
       setProdDescription(data.description);
@@ -267,7 +264,7 @@ const updateProductHook = () => {
     formData.append("imageCover", imageaForSend[imageaForSend.length - 1]);
     formData.append("description", ProdDescription);
     formData.append("quantity", Qty);
-    formData.append("price", PriceBefor);
+    formData.append("price", PriceAfter);
     formData.append("brand", BrandId);
     formData.append("category", CatId);
 

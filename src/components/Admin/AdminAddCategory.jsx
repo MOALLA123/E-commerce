@@ -3,7 +3,7 @@ import { Col, Spinner } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import avatar from "../../images/avatar.png";
 import "react-toastify/dist/ReactToastify.css";
-import { ToastContainer } from "react-toastify";
+
 import AddCategoryHook from "../../hook/category/Add-Category-Hook";
 
 export const AdminAddCategory = () => {
@@ -78,17 +78,6 @@ export const AdminAddCategory = () => {
           <h4>تم الانتهاء</h4>
         )
       ) : null}
-      <ToastContainer
-        autoClose={1000}
-        position="top-right"
-        hideProgressBar={true}
-        closeOnClick={false}
-        rtl={false}
-        pauseOnFocusLoss={false}
-        draggable={false}
-        pauseOnHover={false}
-        theme="dark"
-      />
     </div>
   );
 };

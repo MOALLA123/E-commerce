@@ -16,9 +16,10 @@ const HomeCategory = () => {
             <Spinner animation="grow" />
           </div>
         ) : category ? (
-          category.data.slice(0, 6).map((item) => {
+          category.data.slice(0, 6).map((item, i) => {
             return (
               <CategoryCard
+                key={i}
                 title={item.name}
                 img={item.image}
                 background="#F4DBA4"

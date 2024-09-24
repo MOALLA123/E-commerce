@@ -5,7 +5,7 @@ import {
   GET_SPECIFIC_CATEGORY,
 } from "../type";
 import UseGetData from "../../hooks/UseGetData";
-import { useinsertDataWithImage } from "../../hooks/UseinsertData";
+import { useInsertDataWithImage } from "../../hooks/UseinsertData";
 
 export const getAllCategory = (limit) => async (dispatch) => {
   try {
@@ -33,7 +33,7 @@ export const getAllCategoryPage = (page) => async (dispatch) => {
 
 export const createCategory = (formData) => async (dispatch) => {
   try {
-    const response = await useinsertDataWithImage(
+    const response = await useInsertDataWithImage(
       "api/v1/categories",
       formData
     );

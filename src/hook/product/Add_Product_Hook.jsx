@@ -69,8 +69,6 @@ const AddProductHook = () => {
     //   "--color-logo"
     // );
 
-    // console.log(color, "xxxxxxxxxxxxxxxxxxxxxxxx");
-
     dispatch(getAllCategory());
 
     dispatch(getAllBrand());
@@ -209,7 +207,6 @@ const AddProductHook = () => {
       } else {
         notify("هناك مشكة في الادخال", "warn");
       }
-      console.log(product, "ggggggggggggggggggggg");
 
       setTimeout(() => setLoading(true), 1500);
     }

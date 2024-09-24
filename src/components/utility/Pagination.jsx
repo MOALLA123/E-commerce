@@ -5,6 +5,7 @@ const Pagination = ({ pageCount, onPress }) => {
   const handlePageClick = (data) => {
     onPress(data.selected + 1);
   };
+
   return (
     <ReactPaginate
       breakLabel="..."

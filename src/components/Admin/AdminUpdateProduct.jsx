@@ -6,8 +6,6 @@ import add from "../../images/add.png";
 
 import { CompactPicker } from "react-color";
 
-import { ToastContainer } from "react-toastify";
-
 import updateProductHook from "../../hook/product/Admin_Update_Product_Hook";
 
 const AdminUpdateProduct = () => {
@@ -99,20 +97,19 @@ const AdminUpdateProduct = () => {
               onChange={handleImagInput}
             />
           </div>
-          {images &&
-            images.map((e) => {
-              return (
-                <img
-                  key={e}
-                  onClick={() => removeImage(e)}
-                  src={e}
-                  alt="nothing"
-                  height="100px"
-                  width="120px"
-                  style={{ cursor: "pointer" }}
-                />
-              );
-            })}
+          {images?.map((e, i) => {
+            return (
+              <img
+                key={i}
+                onClick={() => removeImage(e)}
+                src={e}
+                alt="nothing"
+                height="100px"
+                width="120px"
+                style={{ cursor: "pointer" }}
+              />
+            );
+          })}
 
           {images.length > 0 && (
             <div className="text-form mt-3 ">لحذف الصورة قم بالضغط عليها</div>
@@ -275,17 +272,6 @@ const AdminUpdateProduct = () => {
           </button>
         </Col>
       </Row>
-      <ToastContainer
-        autoClose={1000}
-        position="top-right"
-        hideProgressBar={true}
-        closeOnClick={false}
-        rtl={false}
-        pauseOnFocusLoss={false}
-        draggable={false}
-        pauseOnHover={false}
-        theme="dark"
-      />
     </div>
   );
 };

@@ -9,9 +9,10 @@ const CategoryContainer = ({ category }) => {
 
         <Row className="my-2 d-flex justify-content-between">
           {category ? (
-            category.data.map((item) => {
+            category.data.map((item, i) => {
               return (
                 <CategoryCard
+                  key={i}
                   title={item.name}
                   img={item.image}
                   background="#F4DBA4"

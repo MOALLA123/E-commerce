@@ -22,7 +22,7 @@ const AddSubcategoryHook = () => {
   const category = useSelector((state) => state.allCategory.category);
 
   const handleChange = (e) => {
-    console.log(e.target.value);
+    s;
     sestId(e.target.value);
   };
 
@@ -56,9 +56,6 @@ const AddSubcategoryHook = () => {
     if (loading === false) {
       setName("");
       sestId("0");
-      if (subcategory) {
-        console.log(subcategory, "kokokokokok");
-      }
 
       if (
         subcategory === "ErrorAxiosError: Request failed with status code 400"

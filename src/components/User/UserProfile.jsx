@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Row, Col } from "react-bootstrap";
 import deleteicon from "../../images/delete.png";
 const UserProfile = () => {
+  const [user, setUser] = useState("");
+
+  useEffect(() => {
+    !!localStorage.getItem("user") &&
+      setUser(JSON.parse(localStorage.getItem("user")));
+  }, []);
+
   return (
     <div>
       <div className="admin-content-text">الصفحه الشخصية</div>
@@ -9,7 +16,7 @@ const UserProfile = () => {
         <Row className="d-flex justify-content-between pt-2">
           <Col xs="6" className="d-flex">
             <div className="p-2">الاسم:</div>
-            <div className="p-1 item-delete-edit">احمد عبداللة</div>
+            <div className="p-1 item-delete-edit">{user && user.name}</div>
           </Col>
           <Col xs="6" className="d-flex justify-content-end">
             <div className="d-flex mx-2">
@@ -28,13 +35,13 @@ const UserProfile = () => {
         <Row className="">
           <Col xs="12" className="d-flex">
             <div className="p-2">رقم الهاتف:</div>
-            <div className="p-1 item-delete-edit">0122314324</div>
+            <div className="p-1 item-delete-edit">{user && user.phone}</div>
           </Col>
         </Row>
         <Row className="">
           <Col xs="12" className="d-flex">
             <div className="p-2">الايميل:</div>
-            <div className="p-1 item-delete-edit">ahmed@gmail.com</div>
+            <div className="p-1 item-delete-edit">{user && user.email}</div>
           </Col>
         </Row>
         <Row className="mt-5">
