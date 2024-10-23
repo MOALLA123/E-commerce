@@ -106,8 +106,8 @@ const RegisterPage = () => {
               {...register("password", {
                 required: "required",
                 pattern: {
-                  value: /(\d+|\w+){8,}/,
-                  message: "must be at least 8 chrecter",
+                  value: /(\d+|\w+){6,}/,
+                  message: "must be at least 6 chrecter",
                 },
               })}
             />
@@ -121,7 +121,7 @@ const RegisterPage = () => {
               {...register("passwordConfirm", {
                 required: "required",
                 pattern: {
-                  value: /(\d+|\w+){8,}/,
+                  value: /(\d+|\w+){6,}/,
                   message: "Entered value does not match email format",
                 },
               })}

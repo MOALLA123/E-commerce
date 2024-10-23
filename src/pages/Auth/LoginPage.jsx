@@ -45,9 +45,7 @@ const LoginPage = () => {
         notify("logged in", "success");
 
         // moving to login page after register
-        setTimeout(() => {
-          window.location.href = "/";
-        }, 1500);
+        window.location.href = "/";
       } else {
         localStorage.removeItem("token");
         localStorage.removeItem("user");

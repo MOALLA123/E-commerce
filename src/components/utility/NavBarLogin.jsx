@@ -8,7 +8,8 @@ import {
 } from "react-bootstrap";
 import logo from "../../images/logo.png";
 import login from "../../images/login.png";
-import cart from "../../images/cart.png";
+import cartImg from "../../images/cart.png";
+import { useSelector } from "react-redux";
 const NavBarLogin = () => {
   const [user, setUser] = useState("");
 
@@ -23,9 +24,10 @@ const NavBarLogin = () => {
     localStorage.removeItem("token");
     setUser("");
   };
-
+  const cart = useSelector((state) => state.UserCartReducer.AlluserCart);
+  console.log(cart);
   return (
-    <Navbar className="sticky-top" bg="dark" variant="dark" expand="sm">
+    <Navbar className="sticky-top navbar" bg="none" variant="dark" expand="sm">
       <Container>
         <Navbar.Brand>
           <a href="/">
@@ -73,7 +75,27 @@ const NavBarLogin = () => {
               className="nav-text d-flex mt-3 justify-content-center"
               style={{ color: "white" }}
             >
-              <img src={cart} className="login-img" alt="sfvs" />
+              <div className="position-relative">
+                {cart.status === 404 ? null : cart.status === 401 ? (
+                  <h1>Unauth</h1>
+                ) : (
+                  <>
+                    <p
+                      className="position-absolute p-.5 "
+                      style={{
+                        width: "10px",
+                        background: "red",
+                        borderRadius: "50%",
+                        top: "-14px",
+                      }}
+                    >
+                      {cart?.data?.products?.length}
+                    </p>
+                    <img src={cartImg} className="login-img" alt="sfvs" />
+                  </>
+                )}
+              </div>
+
               <p style={{ color: "white" }}>العربه</p>
             </Nav.Link>
           </Nav>

@@ -3,17 +3,23 @@ import { Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getSpecificBrand } from "../../redux/actions/BrandAction";
 import { getSpecifiCategory } from "../../redux/actions/CategoryAction";
+import AddProductCartHook from "../../hook/User/Add_Product_Cart_Hook";
 
 const ProductText = ({ details }) => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getSpecificBrand(details.brand));
-    dispatch(getSpecifiCategory(details.category));
+    const f = async () => {
+      dispatch(getSpecificBrand(details.brand));
+      await dispatch(getSpecifiCategory(details.category));
+    };
+    f();
   }, []);
   const brand = useSelector((state) => state.allBrand.specificBrand.data);
   const category = useSelector(
     (state) => state.allCategory.specificCategory.data
   );
+
+  const [handleAddProductTocart] = AddProductCartHook(details._id);
   return (
     <div>
       <Row className="mt-2">
@@ -65,7 +71,10 @@ const ProductText = ({ details }) => {
           <div className="product-price d-inline px-3 py-3 border">
             {details.price} $
           </div>
-          <div className="product-cart-add px-3 py-3 d-inline mx-3">
+          <div
+            onClick={handleAddProductTocart}
+            className="product-cart-add px-3 py-3 d-inline mx-3"
+          >
             اضف للعربة
           </div>
         </Col>

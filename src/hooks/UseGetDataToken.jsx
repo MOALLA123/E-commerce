@@ -5,7 +5,7 @@ const useGetDataToken = async (url, parmas) => {
     headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
   };
   const res = await baseUrl.get(url, config);
-  return res.data;
+  return res;
 };
 
 export default useGetDataToken;

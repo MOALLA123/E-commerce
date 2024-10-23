@@ -5,7 +5,6 @@ import {
   AddProductToWishlist,
   DeleteProductFromWishlist,
 } from "../../redux/actions/WishlistAction";
-import { BsNutFill } from "react-icons/bs";
 
 /***************/
 /*  AM is  abbreviation of ADD & REMOVE* */
@@ -36,7 +35,7 @@ const AMProductWishlistHook = (id) => {
   };
 
   useEffect(() => {
-    HomeWishlist.some((e) => (e._id === id) === true) && setClick(true);
+    HomeWishlist?.data?.some((e) => (e._id === id) === true) && setClick(true);
   }, [HomeWishlist]);
 
   //|| x.some((e) => e === id)

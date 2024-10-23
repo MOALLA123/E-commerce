@@ -15,7 +15,7 @@ const CategoryContainer = ({ category }) => {
                   key={i}
                   title={item.name}
                   img={item.image}
-                  background="#F4DBA4"
+                  background="d8d3d2"
                 />
               );
             })

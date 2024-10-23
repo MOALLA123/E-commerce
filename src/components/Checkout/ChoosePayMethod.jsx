@@ -1,7 +1,9 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
+import UserCreateOrderHook from "../../hook/Order/User_Create_Order_Hook";
 
 const ChoosePayMethoud = () => {
+  const [handleCreateOrder] = UserCreateOrderHook();
   return (
     <div>
       <div className="admin-content-text pt-5">اختر طريقة الدفع</div>
@@ -40,7 +42,10 @@ const ChoosePayMethoud = () => {
       <Row>
         <Col xs="12" className="d-flex justify-content-end">
           <div className="product-price d-inline   border">34000 جنية</div>
-          <div className="product-cart-add px-3 pt-2 d-inline me-2">
+          <div
+            className="product-cart-add px-3 pt-2 d-inline me-2"
+            onClick={handleCreateOrder}
+          >
             {" "}
             اتمام الشراء
           </div>

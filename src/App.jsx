@@ -35,6 +35,8 @@ import VerifyPasswordPage from "./pages/Auth/VerifyPasswordPage";
 import UserProfile from "./components/User/UserProfile";
 import ResetPasswordPage from "./pages/Auth/ResetPasswordPage";
 import { ToastContainer } from "react-toastify";
+import AdminAddCouponPage from "./pages/Admin/AdminAddCouponPage";
+import AdminEditCouponPage from "./pages/Admin/AdminEditCouponPage";
 
 const App = () => {
   const location = useLocation();
@@ -175,10 +177,21 @@ const App = () => {
               }
             />
             <Route
-              path="/admin/setting"
+              path="/admin/Coupon"
               element={
                 <Transitions>
-                  <AdminSetting />
+                  <AdminAddCouponPage />
+                </Transitions>
+              }
+            />
+            {/* 
+/admin/edit-Coupon/ */}
+
+            <Route
+              path="admin/edit-Coupon/:id"
+              element={
+                <Transitions>
+                  <AdminEditCouponPage />
                 </Transitions>
               }
             />
@@ -223,7 +236,7 @@ const App = () => {
               }
             />
             <Route
-              path="/user/edit-address"
+              path="/user/edit-address/:id"
               element={
                 <Transitions>
                   <UserEditAddressPage />

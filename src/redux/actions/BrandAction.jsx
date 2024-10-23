@@ -50,6 +50,6 @@ export const getSpecificBrand = (id) => async (dispatch) => {
       loading: true,
     });
   } catch (e) {
-    dispatch({ type: GET_ERROR, payload: "Error" + e });
+    dispatch({ type: GET_ERROR, payload: e.response });
   }
 };

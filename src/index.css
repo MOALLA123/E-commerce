@@ -1,3 +1,12 @@
+.navbar {
+  background-color: rgba(59, 52, 52, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(4px);
+
+  /* filter: blur(1px);
+  -webkit-filter: blur(1px); */
+}
+
 body {
   margin: 0;
   font-family: "Almarai", sans-serif;
@@ -6,6 +15,7 @@ body {
 .m-0 {
   margin: 0;
 }
+
 .p-0 {
   padding: 0;
 }
@@ -14,6 +24,7 @@ html.is-leaving .transition-fade {
   transition: opacity 1s;
   opacity: 1;
 }
+
 /* Define the styles for the unloaded pages */
 html.is-animating .transition-fade {
   opacity: 0;
@@ -63,18 +74,21 @@ html.is-animating .transition-fade {
 }
 
 .logo {
-  height: 46px;
-  width: 50px;
+  height: 70px;
+  width: 70px;
 }
+
 .login-img {
   height: 20px;
   width: 20px;
 }
+
 .nav-text {
   color: #ffffff;
   font-size: 12px;
   font-weight: bold;
 }
+
 .sub-tile {
   color: #272727;
   font-family: Almarai;
@@ -89,21 +103,25 @@ html.is-animating .transition-fade {
   height: "296px";
   width: 294.26px;
 }
+
 .slider-background2 {
   background: linear-gradient(174.76deg, #d3deff 0%, #a8baff 100%);
   height: "296px";
   width: 294.26px;
 }
+
 .slider-background3 {
   background: linear-gradient(176.69deg, #f8f0d5 0%, #efdcab 100%);
   height: "296px";
   width: 294.26px;
 }
+
 .slider-background4 {
   background: linear-gradient(175.24deg, #b2e8f0 0%, #7bccdc 100%);
   height: "296px";
   width: 294.26px;
 }
+
 .slider-title {
   color: #915970;
   font-family: Almarai;
@@ -112,6 +130,7 @@ html.is-animating .transition-fade {
   line-height: 32px;
   text-align: center;
 }
+
 .slider-text {
   color: #915970;
   font-family: Almarai;
@@ -121,12 +140,14 @@ html.is-animating .transition-fade {
   line-height: 53px;
   text-align: center;
 }
+
 .allCard {
-  position: relative;
   height: 130px;
   width: 130px;
 }
+
 .categoty-card {
+  display: flex;
   height: 140px;
   width: 100%;
   border-radius: 50%;
@@ -140,6 +161,7 @@ html.is-animating .transition-fade {
   top: 20%;
   left: 10%;
 }
+
 .categoty-card-text {
   color: #555550;
   font-family: Almarai;
@@ -149,7 +171,6 @@ html.is-animating .transition-fade {
 }
 
 /* products card style */
-
 .card-title {
   color: #555550;
   font-family: Almarai;
@@ -158,6 +179,7 @@ html.is-animating .transition-fade {
   line-height: 20px;
   text-align: right;
 }
+
 .card-price {
   color: #272727;
   font-family: Almarai;
@@ -166,6 +188,7 @@ html.is-animating .transition-fade {
   letter-spacing: 0;
   line-height: 28px;
 }
+
 .card-currency {
   color: #555550;
   font-family: Almarai;
@@ -173,6 +196,7 @@ html.is-animating .transition-fade {
   letter-spacing: 0;
   line-height: 24px;
 }
+
 .card-rate {
   color: #ffc107;
   font-family: Almarai;
@@ -181,6 +205,7 @@ html.is-animating .transition-fade {
   letter-spacing: 0;
   line-height: 19px;
 }
+
 /* end of card style */
 .shopping-now {
   padding: 5px;
@@ -656,7 +681,7 @@ html.is-animating .transition-fade {
 /* user Address */
 
 .user-address-card {
-  height: 151px;
+  height: 100%;
   width: 100%;
   border-radius: 7px;
 
@@ -683,7 +708,7 @@ html.is-animating .transition-fade {
   box-shadow: 0 1px 2px 0 rgba(151, 151, 151, 0.5);
 }
 /* end user data */
-
+allCard
 /* filter side style */
 .filter-title {
   color: #555550;
@@ -735,4 +760,9 @@ html.is-animating .transition-fade {
 .dropdown-item:hover {
   color: #212529 !important;
   background-color: white !important;
+}
+
+.brand-title {
+  justify-content: center;
+  display: flex;
 }

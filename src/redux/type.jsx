@@ -30,3 +30,33 @@ export const UPDATE_REVIEW = "UPDATE_REVIEW";
 export const ADD_TO_WISHLIST = "ADD_TO_WISHLIST";
 export const GET_WISHLIST = "GET_WISHLIST";
 export const REMOVE_FROM_WISHLIST = "REMOVE_FROM_WISHLIST";
+
+/************* */
+export const UPDATE_PASSWORD = "UPDATE_PASSWORD";
+export const UPDATE_USER_DATA = "UPDATE_USER_DATA";
+
+/********************/
+
+export const CREATE_ADDRESS = "CREATE_ADDRESS";
+export const UPDATE_USER_ADDRESS = " UPDATE_USER_ADDRESS";
+export const DELETE_ADDRESS = "DELETE_ADDRESS";
+export const GET_ADDRESS = "GET_ADDRESS";
+export const GET_SPECIFIC_ADDRESS = "GET_SPECIFIC_ADDRESS";
+
+/************ */
+export const CREATE_COUPON = "CREATE_COUPON";
+export const DELETE_COUPON = "DELETE_COUPON";
+export const UPDATE_COUPON = "UPDATE_COUPON";
+export const GET_COUPON = "GET_COUPON";
+export const GET_SPECIFIC_COUPON = "GET_SPECIFIC_COUPON";
+
+/*********************** */
+
+export const ADD_PRODUCT_TO_CART = " ADD_PRODUCT_TO_CART";
+export const UPDATE_CART_PRODUCT_QUANTITY = "UPDATE_CART_PRODUCT_QUANTITY";
+export const GET_CART = "GET_CART";
+export const DELETE_ITEM_CART = "DELETE_ITEM_CART";
+export const APPLY_COUPON = "APPLY_COUPON";
+
+/*************** */
+export const CREATE_ORDER = "CREATE_ORDER";

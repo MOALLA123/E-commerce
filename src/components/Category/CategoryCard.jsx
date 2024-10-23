@@ -1,5 +1,5 @@
 import React from "react";
-import { Col } from "react-bootstrap";
+import { Col, Card } from "react-bootstrap";
 
 const CategoryCard = ({ background, img, title }) => {
   return (
@@ -11,11 +11,9 @@ const CategoryCard = ({ background, img, title }) => {
       className="my-4 d-flex justify-content-around "
     >
       <div className="allCard mb-3 ">
-        <div
-          className="categoty-card "
-          style={{ backgroundColor: `${background}` }}
-        ></div>{" "}
-        <img alt="zcv" src={img} className="categoty-card-img" />
+        <Card>
+          <Card.Img variant="top" src={img} style={{ height: "154px" }} />
+        </Card>
         <p className="categoty-card-text my-2">{title}</p>
       </div>
     </Col>
